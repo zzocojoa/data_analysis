@@ -51,7 +51,7 @@ plt.imshow(mask, cmap=plt.cm.gray) # cmap=plt.cm.gray : plt.cm에 있는 칼라�
 plt.title('Original Stencil', size=40)
 plt.axis('off')
 f.add_subplot(1, 2, 2) # subplot 2번째
-plt.imshow(wc, interpolation='nearest')
+plt.imshow(wc, interpolation='nearest') # https://matplotlib.org/stable/gallery/images_contours_and_fields/interpolation_methods.html
 plt.title('Sparta Cloud', size=40)
 plt.axis('off')
 
