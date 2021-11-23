@@ -41,6 +41,12 @@ plt.ylabel('사용자(명)')
 plt.xticks(np.arange(24))
 
 # pivot_table
+# pivot_table(data, values=None, index=None, columns=None, aggfunc='mean', fill_value=None, margins=False, margins_name='All')
+# data: 분석할 데이터
+# values: 분석할 수
+# index: 행 인덱스
+# columns: 열 인덱스
+# aggfunc: 분석 방법(aggregation function)
 sparta_data_pivot_table = pd.pivot_table(sparta_data, values='user_id', aggfunc='count',
                                         index=['done_date_time_weekday'],
                                         columns=['done_date_hour']
@@ -49,7 +55,7 @@ sparta_data_pivot_table = pd.pivot_table(sparta_data, values='user_id', aggfunc=
 # 요일별 종료 시간 히트맵(pivot_table)
 plt.figure(figsize=(14,5))
 plt.pcolor(sparta_data_pivot_table)
-plt.xticks(np.arange(0.5, len(sparta_data_pivot_table.columns), 1), sparta_data_pivot_table.columns)
+plt.xticks(np.arange(0.5, len(sparta_data_pivot_table.columns), 1), sparta_data_pivot_table.columns) # 위치 지정만 해준다
 plt.yticks(np.arange(0.5, len(sparta_data_pivot_table.index), 1), sparta_data_pivot_table.index)
 plt.title('요일별 종료 시간 히트맵')
 plt.xlabel('시간')
